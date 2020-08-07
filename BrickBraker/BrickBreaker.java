@@ -50,15 +50,21 @@ class PDemo extends JPanel implements ActionListener , KeyListener
 		// brick = ic2.getImage();
 		// brick2 = ic3.getImage();
 		start_game = false;
-		x = 200;
-		y = 300;
-		xspeed = 10;
-		yspeed = 10;
-		time = 33;
-		xb = width/2 -60 ; // x position of brick
-		yb = height -70;	// y position of brick 
-		wb = 120;  // width of brick
-		hb = 30;  // height of brick
+		// getting random positon for ball in the start of game
+		int r1 = (int)Math.round(Math.random()*600 + 100); // random value for x position of ball (100 >= x && x<700)
+		int r2 = (int)Math.round(Math.random()*200+300);// random value for y position of ball ( 300 >= y && y <500)
+		r1 -= r1%10; // rounding values to make them factor of 10
+		r2 -= r2%10; // rounding values to make them factor of 10
+		x = r1;
+		y = r2;
+
+		xspeed = 10; // speed in x direction
+		yspeed = 10; // speed in y direction
+		time = 33;  // refresh time of graphics on screen
+		xb = width/2 -60 ; // x position of block
+		yb = height -70;	// y position of block 
+		wb = 120;  // width of block
+		hb = 30;  // height of block
 		size_of_ball =30;
 
 		Font f = new Font("stencil",Font.BOLD, 55);
@@ -113,12 +119,12 @@ class PDemo extends JPanel implements ActionListener , KeyListener
 		{
 			timer.stop();
 			g.drawString("You Win ....",250,400);
-			g.drawString("abhi maja aaya na beedu",10,500);
+			g.drawString("hope you have enjoyed",10,500);
 		}			
 		else if(y> height -40 )
 			{
 				timer.stop();
-				g.drawString("sed life, you loose bro ",50,400);
+				g.drawString("you loose bro, try again",50,400);
 				
 			}
 	}
