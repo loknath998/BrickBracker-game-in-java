@@ -67,7 +67,7 @@ class PDemo extends JPanel implements ActionListener , KeyListener
 		hb = 30;  // height of block
 		size_of_ball =30;
 
-		Font f = new Font("stencil",Font.BOLD, 55);
+		Font f = new Font("stencil",Font.BOLD, 50);
 		setFont(f);
 		// setBackground(Color.white);
 		setBackground(Color.black);
